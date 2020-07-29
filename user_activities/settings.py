@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w)h$t_i_&qv4--n-8@ahixlx@o!h+=+$_7b6!9f*-+tkze#^oe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['user-activity-ftl.herokuapp.com','127.0.0.1']
 
 
 # Application definition
