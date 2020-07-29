@@ -1,5 +1,5 @@
 from .models import User,Activity
-from .serializers import UserSerializer,ActivitySerializer
+from .serializers import UserSerializer
 from rest_framework import viewsets
 
 class UserActivitiesAPI(viewsets.ModelViewSet):
