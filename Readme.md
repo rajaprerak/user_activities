@@ -1,4 +1,4 @@
-# Django based application to serve api of user activities
+# Django based application to serve API of user activities
 > https://user-activity-ftl.herokuapp.com/
 
 
@@ -77,6 +77,8 @@ $ python manage.py runserver
 * The application is deployed using heroku.
 * Heroku reads from **Procfile** to run our application.
 * All the required packages are present in **requirements.txt** file.
+> https://user-activity-ftl.herokuapp.com/
+
 
 
 ## Migration 🔃
