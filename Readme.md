@@ -1,4 +1,4 @@
-# Django based application to serve api of user activities
+# Django based application to serve API of user activities
 > https://user-activity-ftl.herokuapp.com/
 
 
