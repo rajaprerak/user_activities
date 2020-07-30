@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 from activity.models import User, Activity
 from random import randrange
 from datetime import timedelta, datetime
-import  pytz
+import pytz
 
 
 class Command(BaseCommand):
@@ -31,6 +31,10 @@ class Command(BaseCommand):
         return start + timedelta(seconds=random_second)
 
     def handle(self, *args, **options):
+        """
+        This function generates dummy data for our User and Activity model.
+        """
+
         records = []
         for _ in range(10):
             kwargs = {
@@ -46,10 +50,10 @@ class Command(BaseCommand):
             kwargs1 = {
                 'start_time': self.random_datetime(),
                 'end_time': self.random_datetime(),
-                'userid_id' : random.randint(1, 10)
+                'userid_id': random.randint(1, 10)
             }
             record = Activity(**kwargs1)
             records.append(record)
         Activity.objects.bulk_create(records)
 
-        self.stdout.write(self.style.SUCCESS('Stock records saved successfully.'))
+        self.stdout.write(self.style.SUCCESS('Records saved successfully.'))

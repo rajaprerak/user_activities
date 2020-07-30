@@ -10,6 +10,7 @@
 ## Table of Contents 📚
 
 - [Installation](#installation)
+- [File Hierarchy](#filehierarchy)
 - [Populate Database](#populatedatabase)
 - [Features](#features)
 - [Deployment](#deployment)
@@ -32,6 +33,37 @@ $ python manage.py runserver
 ```
 > Go to localhost:8000
 
+## FileHierarchy 📄
+* **manage.py** - Run code
+* **requirements.txt** - Required package information 
+* **Procfile** - Contains commands that are executed in heorku on startup.
+* **db.sqlite3** - Our database file
+* **user_activities** folder
+    * **settings.py** - It holds configuration values that your webapp needs.
+    * **urls.py** - URL mapping file
+    * **wsgi.py** - Used both by Django’s development server and in production WSGI deployments
+* **activity** folder (app that we created inside our project)
+    * **models.py** - Contains class that represent table in our database.
+    * **admin.py** - Register the models that we created.
+    * **serializers.py** - Convert query datatypes to python datatype that can be easily rendered to json or xml content type.
+    * **urls.py** - URL mapper for our app views.
+    * **views.py** - Takes web request and returns a web response.
+    * **management/commands/** folder
+        * **populate.py** - File contains custom management commands to populate the database with dummy data.
+* Basic information for creating django project
+    * To create project
+        >django-admin starproject user_activities
+    * To create app within project
+        >python manage.py startapp activity
+    * To create your own superuser to handle admin functionality
+        >python manage.py createsuperuser
+    * Create migration for all application installed in your project
+        >python manage.py makemigrations
+    * Apply migrations to the database
+        >python manage.py migrate
+    * Run code
+        >python manage.py runserver
+
 ## PopulateDatabase 📮
 * I have made use of Django custom management command to populate our database with some dummy data.
 * The file is present in app folder(activity/management/commands/populate.py)
@@ -45,6 +77,7 @@ $ python manage.py runserver
 * The application is deployed using heroku.
 * Heroku reads from **Procfile** to run our application.
 * All the required packages are present in **requirements.txt** file.
+
 
 ## Migration 🔃
 * Migration is django's way of propogating the changes you make to your models(updating database, creating new table, adding new fields). 
