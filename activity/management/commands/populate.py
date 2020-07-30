@@ -45,12 +45,13 @@ class Command(BaseCommand):
             records.append(record)
         User.objects.bulk_create(records)
 
+        total_objects = len(User.objects.all())
         records = []
         for _ in range(30):
             kwargs1 = {
                 'start_time': self.random_datetime(),
                 'end_time': self.random_datetime(),
-                'userid_id': random.randint(1, 10)
+                'userid_id': random.randint(1, total_objects)
             }
             record = Activity(**kwargs1)
             records.append(record)
